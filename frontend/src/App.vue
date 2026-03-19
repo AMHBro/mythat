@@ -1,7 +1,10 @@
 <script setup>
 import { computed, onMounted, reactive, ref, watch } from "vue";
 
-const API = "http://localhost:4000/api";
+// Prefer a deployed backend URL on production (e.g. Vercel env var).
+// Example: VITE_API_BASE_URL="https://your-backend-host/api"
+const API =
+  import.meta.env.VITE_API_BASE_URL || "http://localhost:4000/api";
 
 const accounts = ref([]);
 const ideas = ref([]);
@@ -172,7 +175,8 @@ async function loadAll() {
     metrics.value = mt;
     analytics.value = an;
   } catch (e) {
-    error.value = "تعذر تحميل البيانات. تأكد من تشغيل الـ API على المنفذ 4000.";
+    error.value =
+      "تعذر تحميل البيانات. تأكد أن الـ API يعمل وأن `VITE_API_BASE_URL` مضبوط (إن كنت على Vercel).";
     console.error(e);
   } finally {
     loading.value = false;

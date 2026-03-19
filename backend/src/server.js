@@ -9,9 +9,20 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 4000;
 
+// CORS:
+// - عند تحديد CLIENT_ORIGIN (يمكن أن تكون قائمة مفصولة بفواصل) نسمح فقط بتلك الـ origins.
+// - إذا لم يتم تحديدها نسمح بالـ origins بشكل عام (مناسب لـ MVP وبيئات مثل Vercel).
+const corsOriginEnv = process.env.CLIENT_ORIGIN;
+const corsOrigins = corsOriginEnv
+  ? corsOriginEnv
+      .split(",")
+      .map((s) => s.trim())
+      .filter(Boolean)
+  : [];
+
 app.use(
   cors({
-    origin: process.env.CLIENT_ORIGIN || "http://localhost:5173",
+    origin: corsOrigins.length ? corsOrigins : true,
   })
 );
 app.use(express.json());
