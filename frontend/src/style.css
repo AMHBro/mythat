@@ -1,0 +1,172 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f6fb;
+  color: #1f2937;
+  direction: rtl;
+  text-align: right;
+}
+
+#app {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.header h1 {
+  margin: 0 0 8px;
+}
+
+.header p {
+  margin: 0 0 20px;
+  color: #4b5563;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.tabs button {
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-transform: none;
+}
+
+.tabs button.active {
+  background: #111827;
+  color: #ffffff;
+  border-color: #111827;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.card,
+.panel {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.card h3 {
+  margin: 0 0 8px;
+}
+
+.card strong {
+  font-size: 30px;
+}
+
+.span-2 {
+  grid-column: span 2;
+}
+
+.panel h2 {
+  margin-top: 0;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.toolbar {
+  margin-bottom: 16px;
+  display: flex;
+  gap: 12px;
+  align-items: end;
+  flex-wrap: wrap;
+}
+
+.seed-btn {
+  border: 1px solid #d1d5db;
+  background: #111827;
+  color: #ffffff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.seed-btn:hover {
+  opacity: 0.95;
+}
+
+.form input,
+.form select,
+.form button {
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.form label {
+  display: grid;
+  gap: 4px;
+  font-size: 13px;
+}
+
+.form button {
+  background: #111827;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+ul {
+  margin: 0;
+  padding-left: 0;
+  padding-right: 16px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+.error {
+  color: #b91c1c;
+}
+
+.list-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.danger-btn {
+  border: 1px solid #ef4444;
+  background: #ef4444;
+  color: #ffffff;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.danger-btn:hover {
+  opacity: 0.95;
+}
+
+.chart {
+  max-width: 100%;
+  height: auto;
+}
+
+.chart-label {
+  font-size: 10px;
+  fill: #6b7280;
+}
