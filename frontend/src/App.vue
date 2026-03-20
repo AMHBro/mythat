@@ -4,7 +4,7 @@ import { computed, onMounted, reactive, ref, watch } from "vue";
 // Prefer a deployed backend URL on production (e.g. Vercel env var).
 // Example: VITE_API_BASE_URL="https://your-backend-host/api"
 const API =
-  import.meta.env.VITE_API_BASE_URL || "http://localhost:4000/api";
+  import.meta.env.VITE_API_BASE_URL || "/api";
 
 const accounts = ref([]);
 const ideas = ref([]);
