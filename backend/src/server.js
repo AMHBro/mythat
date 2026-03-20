@@ -422,6 +422,12 @@ function makeCrudRoutes(entity) {
 
 ["accounts", "ideas", "posts", "campaigns", "metrics"].forEach(makeCrudRoutes);
 
-app.listen(PORT, () => {
-  console.log(`API running on http://localhost:${PORT}`);
-});
+// Vercel expects an Express app export (single serverless function).
+// Local dev still uses `app.listen` when run directly.
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`API running on http://localhost:${PORT}`);
+  });
+}
+
+module.exports = app;
